@@ -1,16 +1,1 @@
-#include <stdio.h>
-int main (void) {
-	int array[2][3][4];
-	int value = 0;
-	for (int i = 0; i < 2; i++) {
-		for (int j = 0; j < 3; i++) {
-			for (int k = 0; k < 4; i++) {
-				array[i][j][k]=value;
-				printf("array[%d][%d][%d] = %d\n", i, j, k, value);
-				value++;
-			}
-		}
-	}
 
-	return 0;
-}
