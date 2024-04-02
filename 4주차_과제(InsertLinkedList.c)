@@ -49,7 +49,7 @@ void insertMiddleNode(linkedList_h* L, listNode* pre, char* x) {
 	}
 	else if (pre == NULL) {
 		newNode->link = L->head;
-		L->head - newNode;
+		L->head = newNode;
 	}
 	else {
 		newNode->link = pre->link;
