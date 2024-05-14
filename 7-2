@@ -1,10 +1,10 @@
 //folderSize.h//
 #pragma once
 int FolderSize; 
-typedef struct treeNode {	// 트리의 노드 구조 정의
-	int size;				        // 데이터 필드
-	struct treeNode* left;   	// 왼쪽 서브 트리에 대한 링크 필드
-	struct treeNode* right;	// 오른쪽 서브 트리에 대한 링크 필드
+typedef struct treeNode {
+	int size;
+	struct treeNode* left;
+	struct treeNode* right;
 } treeNode;
 
 treeNode* makeRootNode(int size, treeNode* leftNode, treeNode* rightNode);
@@ -13,7 +13,7 @@ int postorder_FolderSize(treeNode* root);
 //folderSize.c//
 #include <stdlib.h>
 #include "folderSize.h"
-// size를 루트 노드의 데이터 필드로 하여 왼쪽과 오른쪽 서브 트리를 연결하는 연산
+
 treeNode* makeRootNode(int size, treeNode* leftNode, treeNode* rightNode) {
 	treeNode* root = (treeNode*)malloc(sizeof(treeNode));
 	root->size = size;
@@ -21,7 +21,7 @@ treeNode* makeRootNode(int size, treeNode* leftNode, treeNode* rightNode) {
 	root->right = rightNode;
 	return root;
 }
-// 각 폴더 크기를 계산하기 위한 후위 순회 연산
+
 int postorder_FolderSize(treeNode* root) {
 	if (root) {
 		postorder_FolderSize(root->left);
@@ -36,7 +36,6 @@ int postorder_FolderSize(treeNode* root) {
 #include "folderSize.h"
 
 int main(void) {
-	//이진 트리 생성하기
 	treeNode* F11 = makeRootNode(120, NULL, NULL);
 	treeNode* F10 = makeRootNode(55, NULL, NULL);
 	treeNode* F9 = makeRootNode(100, NULL, NULL);
