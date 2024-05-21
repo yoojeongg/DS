@@ -15,8 +15,7 @@ void threadlnorder(treeThNode* root);
 #include <stdio.h>
 #include <stdlib.h>
 #include "threadBT.h"
-
-// data를 루트 노드로 하여 왼쪽 서브 트리와 오른쪽 서브 트리를 연결하는 연산
+ 
 treeThNode* makeRootThNode(char data, treeThNode* leftNode, treeThNode* rightNode, int isThreadRight) {
 	treeThNode* root = (treeThNode*)malloc(sizeof(treeThNode));
 	root->data = data;
@@ -25,8 +24,7 @@ treeThNode* makeRootThNode(char data, treeThNode* leftNode, treeThNode* rightNod
 	root->isThreadRight = isThreadRight;
 	return root;
 }
-
-// 후속자 노드를 반환하는 연산
+ 
 treeThNode* findThreadSuccessor(treeThNode* p) {
 	treeThNode* q = p->right;
 	if (q == NULL) return q;
@@ -34,8 +32,7 @@ treeThNode* findThreadSuccessor(treeThNode* p) {
 	while (q->left != NULL) q = q->left;
 	return q;
 }
-
-// 스레드 이진 트리의 중위 순회
+ 
 void threadInorder(treeThNode* root) {
 	treeThNode* q;
 	q = root;
@@ -51,7 +48,6 @@ void threadInorder(treeThNode* root) {
 #include "threadBT.h"
 
 int main(void) {
-	// (A*B-C/D) 수식 이진 트리 만들기 
 	treeThNode* n7 = makeRootThNode('D', NULL, NULL, 0);
 	treeThNode* n6 = makeRootThNode('C', NULL, NULL, 1);
 	treeThNode* n5 = makeRootThNode('B', NULL, NULL, 1);
